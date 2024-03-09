@@ -7,11 +7,9 @@ const NavLinks = () => {
   const [activeNavIndex, setActiveNavIndex] = useState(0);
 
   const handleActiveNav = (index) => {
-    console.log("clicked");
     setActiveNavIndex(index);
   };
 
-  console.log(activeNavIndex);
   return (
     <ul className="nav-links">
       <li>
