@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Button from "../../shared/components/FormElements/Button";
 import Card from "../../shared/components/UIElements/Card";
 
+import { AuthContext } from "../../shared/context/authContext";
+
 import "./placeItem.css";
 
 const PlaceItem = (props) => {
+  const auth = useContext(AuthContext);
+
   const onDeleteClick = () => {
     props.handleDeletePlace(props.id);
   };
@@ -21,13 +25,15 @@ const PlaceItem = (props) => {
           <h3>{props.address}</h3>
           <p>{props.description}</p>
         </div>
-        <div className="place-item__actions">
-          {/* <Button inverse>View on map</Button> */}
-          <Button to={`/places/${props.id}`}>Edit</Button>
-          <Button danger onClick={() => onDeleteClick()}>
-            Delete
-          </Button>
-        </div>
+        {auth.isLoggedIn && (
+          <div className="place-item__actions">
+            {/* <Button inverse>View on map</Button> */}
+            <Button to={`/places/${props.id}`}>Edit</Button>
+            <Button danger onClick={() => onDeleteClick()}>
+              Delete
+            </Button>
+          </div>
+        )}
       </Card>
     </li>
   );

@@ -1,0 +1,27 @@
+.authentication__header {
+  color: white;
+  text-align: center;
+}
+
+.authentication {
+  width: 90%;
+  max-width: 25rem;
+  margin: 7rem auto;
+  text-align: center;
+}
+
+.authentication form {
+  margin-bottom: 1rem;
+}
+
+.MuiTab-textColorPrimary.Mui-selected {
+  color: #ff0055 !important;
+}
+
+.PrivateTabIndicator-colorPrimary-2 {
+  background-color: #ff0055 !important;
+}
+
+.MuiTab-root {
+  font-weight: 700 !important;
+}
