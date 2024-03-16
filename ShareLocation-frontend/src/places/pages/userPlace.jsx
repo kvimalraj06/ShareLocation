@@ -21,6 +21,7 @@ const UserPlace = () => {
   };
 
   const handleDeletePlace = () => {
+    console.log("deleted", deletePlaceId);
     setIsConfirmationOpen(false);
   };
 
