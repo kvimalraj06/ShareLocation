@@ -6,6 +6,10 @@ import Card from "../../shared/components/UIElements/Card";
 import "./placeItem.css";
 
 const PlaceItem = (props) => {
+  const onDeleteClick = () => {
+    props.handleDeletePlace(props.id);
+  };
+
   return (
     <li className="place-item">
       <Card className="place-item__content">
@@ -20,7 +24,9 @@ const PlaceItem = (props) => {
         <div className="place-item__actions">
           {/* <Button inverse>View on map</Button> */}
           <Button to={`/places/${props.id}`}>Edit</Button>
-          <Button danger>Delete</Button>
+          <Button danger onClick={() => onDeleteClick()}>
+            Delete
+          </Button>
         </div>
       </Card>
     </li>
