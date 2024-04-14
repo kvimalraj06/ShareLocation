@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
 import "./navLinks.css";
-import Button from "../FormElements/Button";
 
 const NavLinks = () => {
   const [activeNavIndex, setActiveNavIndex] = useState(0);
