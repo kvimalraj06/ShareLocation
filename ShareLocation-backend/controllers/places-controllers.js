@@ -1,4 +1,5 @@
 const HttpError = require("../models/http-error");
+const { v4: uuid } = require("uuid");
 
 const dummyPlaces = [
   {
@@ -26,7 +27,7 @@ const getPlaceById = (req, res, next) => {
       new HttpError("Could not find the places with provided place id.", 404)
     );
   }
-  res.json({ places });
+  res.status(200).json({ places });
 };
 
 const getPlaceByUserId = (req, res, next) => {
@@ -39,8 +40,32 @@ const getPlaceByUserId = (req, res, next) => {
       new HttpError("Could not find the places with provided place id.", 404)
     );
   }
-  res.json({ places });
+  res.status(200).json({ places });
+};
+
+const createPlace = (req, res, next) => {
+  const { title, description, creatorId } = req.body;
+  const createdPlace = {
+    id: uuid(),
+    place: title,
+    description,
+    creatorId,
+  };
+  dummyPlaces.push(createdPlace);
+  res.status(201).json({ createdPlace });
+};
+
+const updatePlace = (req, res, next) => {
+  const { title, description } = req.body;
+  res.json(200).json({});
+};
+
+const deletePlace = (req, res, next) => {
+  res.status(200).json({});
 };
 
 exports.getPlaceById = getPlaceById;
 exports.getPlaceByUserId = getPlaceByUserId;
+exports.createPlace = createPlace;
+exports.updatePlace = updatePlace;
+exports.deletePlace = deletePlace;
