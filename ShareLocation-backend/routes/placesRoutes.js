@@ -8,7 +8,7 @@ const placesRoutes = require("../controllers/places-controllers");
 router.get("/:pid", placesRoutes.getPlaceById);
 router.get("/users/:uid", placesRoutes.getPlaceByUserId);
 router.post("/", placesRoutes.createPlace);
-router.patch("/", placesRoutes.updatePlace);
-router.delete("/", placesRoutes.deletePlace);
+router.patch("/:pid", placesRoutes.updatePlace);
+router.delete("/:pid", placesRoutes.deletePlace);
 
 module.exports = router;
