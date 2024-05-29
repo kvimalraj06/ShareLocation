@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(noCache);
 
 app.use("/api/places", placeRoutes);
+app.use("/api/users", userRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError("could not find this route.", 404);
