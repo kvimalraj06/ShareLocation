@@ -1,0 +1,8 @@
+.confirmation-text {
+  font-size: 20px !important;
+}
+
+.MuiDialog-paper {
+  max-width: 500px;
+  align-items: center;
+}
